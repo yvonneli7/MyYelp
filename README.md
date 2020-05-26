@@ -1,3 +1,3 @@
-My Yelp to practice React! 
+My Yelp to practice React! 😋
 
-Run npm start! 
+download and run npm start! 
