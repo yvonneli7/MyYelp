@@ -41,9 +41,9 @@ class SearchBar extends React.Component {
 
     handleTermChange(e){
         let term = e.target.value;
-        this.setState = {
+        this.setState({
             term: term
-        };
+        })
         
 
 
@@ -51,9 +51,10 @@ class SearchBar extends React.Component {
 
     handleLocationChange(e){
         let location = e.target.value;
-        this.setState = {
+        console.log(location);
+        this.setState({
             location: location
-        };
+        })
 
     }
 
@@ -69,8 +70,12 @@ class SearchBar extends React.Component {
 
     handleSearch(e){
         //let searchParams = e.target.value;
-        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
-        e.preventDefault();
+        if(this.state.location !== '' && this.state.location !== ''){
+            this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+            e.preventDefault();
+        } else {
+            alert('need to fill in business and location');
+        }
 
     }
 
